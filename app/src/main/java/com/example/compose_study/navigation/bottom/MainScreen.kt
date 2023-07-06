@@ -1,4 +1,4 @@
-package com.example.compose_study.navigation
+package com.example.compose_study.navigation.bottom
 
 import android.annotation.SuppressLint
 import androidx.compose.material3.ExperimentalMaterial3Api

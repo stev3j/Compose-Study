@@ -1,4 +1,4 @@
-package com.example.compose_study.navigation
+package com.example.compose_study.navigation.bottom
 
 import com.example.compose_study.R
 
