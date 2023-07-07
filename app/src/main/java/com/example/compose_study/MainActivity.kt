@@ -11,13 +11,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.example.compose_study.navigation.bottom.BottomNavigationBar
 import com.example.compose_study.navigation.bottom.NavigationGraph
+import com.example.compose_study.topbar.TopBar
+import com.example.compose_study.ui.theme.ComposeStudyTheme
 
 @ExperimentalMaterial3Api
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MainView()
+            ComposeStudyTheme {
+                MainView()
+            }
         }
     }
 }
@@ -29,6 +33,7 @@ fun MainView() {
     val navController = rememberNavController()
 
     Scaffold(
+        topBar = { TopBar() },
         bottomBar = { BottomNavigationBar(navController = navController) }
     ) {
         NavigationGraph(navController = navController)
@@ -39,6 +44,8 @@ fun MainView() {
 @ExperimentalMaterial3Api
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
-    MainView()
+fun MainPreview() {
+    ComposeStudyTheme() {
+        MainView()
+    }
 }
